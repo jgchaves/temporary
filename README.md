@@ -19,4 +19,13 @@ For Windows users enter:
 $ git config --global core.autocrlf true   
 
 For Mac or Linux users enter:    
-$ git config --global core.autocrlf input    
+$ git config --global core.autocrlf input   
+
+## Banching    
+Step 1: Create a Branch   
+To see a list of local branches, type git branch. Right now, you probably only see one branch: master.    
+
+Let’s create a new branch (myfeaturebranch) for our work:   
+
+Type git branch myfeaturebranch   
+Checkout to that branch: git checkout myfeaturebranch     
