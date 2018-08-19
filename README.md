@@ -1,1 +1,22 @@
-# temporary
+## Configure Your Local Environment   
+
+git config --system
+These are system-wide configurations. They apply to all users on this computer.    
+git config --global
+These are the user-level configurations. They only apply to your user account.     
+git config--local 
+These are the repository-level configurations. They only apply to the specific repository where they are set. The default value for git config is --local.       
+     
+Git adds several configurations automatically—type git config --list to see config settings from all three levels.     
+git config --global user.name "First Last"    
+git config --global user.email "you@email.com"    
+
+
+## Configure autocrlf 
+Next, we set core.autocrlf (autocrlf stands for auto carriage return line feed). Different systems handle line endings and line breaks differently. If you open a file created on another operating system and do not have this config option set, Git will think you made changes to the file based on the way your operating system handles the line endings.   
+
+For Windows users enter:   
+$ git config --global core.autocrlf true   
+
+For Mac or Linux users enter:    
+$ git config --global core.autocrlf input    
