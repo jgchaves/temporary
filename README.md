@@ -48,3 +48,19 @@ git log -10 will only show the 10 most recent commits.
 git log --oneline is a great way to view commit history by displaying the first seven characters of the SHA-1 hash and commit message of the commits on the current branch.     
 git log --oneline --graph presents commit history in a ASCII graph displaying the different branches in the repository and their commits.     
 git log --oneline --graph --decorate displays the same ASCII graph that is displayed using the --graph modifier, but also includes the branch name(s) for the different commits being displayed.     
+
+You can also use git diff to compare between any two commits, branches, or tags in the repository. For example, to compare two commits with SHA-1 hash references 4e3dc9b and 0cd75d4, enter command: git diff 4e3dc9b 0cd75d4    
+
+Finally, if you would like to view the changes that were made in a previous commit, you can use the git show <SHA-1> command to display the details of that specific commit. It includes things like commit author, time and date of the commit, and a list of the changes that were made to the various assets within the repository.    
+
+## Undoing Changes    
+git revert creates a new commit with changes that are the opposite of the commit that is functionally being 'undone'.    
+
+## Git reset    
+Git has a git reset command that can help rewind the history of our project, but, it alters the commit history, which as mentioned before, might cause issues for other collaborators. It is highly recommended that you use git reset only when you have not pushed your commits to your remote branch. git reset comes in three distinct flavors, --soft, --mixed, and --hard.    
+ 
+git reset --soft takes the identified commit(s) and places all of the changes in the staging area. This is helpful if you want to take a group of commits and squash them into a single larger commit.     
+git reset --mixed, the default mode for git reset, takes the identified commit(s) and places all of the changes in the working directory. Like --soft, this is helpful if you want to take a group of small commits and combine some of the changes to make larger commits. But you can also use it to make additional changes to the files and then re-create the commit history.    
+git reset --hard will take the identified commit(s) and destroy them. Be careful with this, because they don’t go in your trash or recycle bin—the files essentially don't exist and are completely removed from your repository. Any uncommitted changes to files that are currently in the working directory or staging area will also be deleted. You can lose work with git reset --hard.     
+An example of using reset could look something like this:   
+git reset --soft HEAD~2 would rewind the branch you are on by two commits (remember HEAD is a pointer to the tip of your branch). The changes that had been made in those last two commits would be reflected in the staging area    
