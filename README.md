@@ -41,4 +41,10 @@ git commit -m “My first commit”
 
 ## Send Changes to the Remote Repository    
 Sending and creating the branch:    
-git push -u origin myfeaturebranch     
+git push -u origin myfeaturebranch   
+
+## Explore history with Git    
+git log -10 will only show the 10 most recent commits.    
+git log --oneline is a great way to view commit history by displaying the first seven characters of the SHA-1 hash and commit message of the commits on the current branch.     
+git log --oneline --graph presents commit history in a ASCII graph displaying the different branches in the repository and their commits.     
+git log --oneline --graph --decorate displays the same ASCII graph that is displayed using the --graph modifier, but also includes the branch name(s) for the different commits being displayed.     
